@@ -8,32 +8,26 @@ import android.widget.TextView
 import com.caffeine.bfst.R
 
 object AlertDialog {
-    private var instance : AlertDialog? = null
-    private var dialog : Dialog? = null
 
-    fun getInstance(context: Context) : AlertDialog{
-        if (instance == null){
-            instance = AlertDialog
-            dialog = Dialog(context)
-        }
-        return instance as AlertDialog
-    }
+    fun showAlertDialog(context: Context, msg : String, action : String){
+        val dialog = Dialog(context)
+        dialog.setContentView(R.layout.alert_dialog)
 
-    fun showAlertDialog(msg : String, action : String){
-        dialog?.setContentView(R.layout.alert_dialog)
-
-        val message = dialog?.findViewById<TextView>(R.id.popup_message)
-        val actionBtn = dialog?.findViewById<TextView>(R.id.action_ok)
+        val message = dialog.findViewById<TextView>(R.id.popup_message)
+        val actionBtn = dialog.findViewById<TextView>(R.id.action_ok)
 
         message?.text = msg
         actionBtn?.text = action
 
+        message?.setTextColor(context.resources.getColor(R.color.colorDarkGrey))
+        actionBtn?.setTextColor(context.resources.getColor(R.color.colorWhite))
+
         actionBtn?.setOnClickListener{
-            dialog?.dismiss()
+            dialog.dismiss()
         }
 
-        dialog?.setCancelable(false)
-        dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
-        dialog?.show();
+        dialog.setCancelable(false)
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
     }
 }
