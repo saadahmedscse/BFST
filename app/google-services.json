@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "556501262907",
+    "project_id": "bfst-1905b",
+    "storage_bucket": "bfst-1905b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:556501262907:android:dac861f286ccb8718b321e",
+        "android_client_info": {
+          "package_name": "com.caffeine.bfst"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "556501262907-lonbmjtr0m34j4od6coib0vkt3rmtkit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR2r3857n59rEgk5wmSDSJTJKhQBNNB_E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "556501262907-lonbmjtr0m34j4od6coib0vkt3rmtkit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
