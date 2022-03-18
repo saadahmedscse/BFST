@@ -11,17 +11,18 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.res.ResourcesCompat
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.caffeine.bfst.R
+import com.caffeine.bfst.services.model.UserDetails
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 object Constants {
-    const val app_name = "Eirmon"
+    const val app_name = "BFST"
     val reference = FirebaseDatabase.getInstance().reference.child(app_name)
     val auth = FirebaseAuth.getInstance()
-    val currentUser = auth.currentUser
     val userReference = reference.child("Users")
 
     const val SNACK_LONG = Snackbar.LENGTH_LONG
@@ -35,6 +36,14 @@ object Constants {
 
     fun getVerticalLayoutManager(context : Context) : LinearLayoutManager{
         return LinearLayoutManager(context)
+    }
+
+    fun getMutableDataStateOfString() : MutableLiveData<DataState<String>>{
+        return MutableLiveData<DataState<String>>()
+    }
+
+    fun getMutableDataStateOfUserDetails() : MutableLiveData<DataState<ArrayList<UserDetails>>>{
+        return MutableLiveData<DataState<ArrayList<UserDetails>>>()
     }
 
     fun intentToActivity(activity : Activity, c : Class<*>){
