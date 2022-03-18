@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.caffeine.bfst.R
 import com.caffeine.bfst.databinding.FragmentAuthBinding
+import com.caffeine.bfst.utils.AlertDialog
 import com.caffeine.bfst.utils.Constants
 import com.caffeine.bfst.utils.DataState
 import com.caffeine.bfst.view.activity.HomeActivity
@@ -94,8 +95,7 @@ class AuthFragment : Fragment() {
                 is DataState.Failed -> {
                     binding.progressBar.visibility = View.GONE
                     binding.txtLogin.visibility = View.VISIBLE
-                    Constants.showSnackBar(requireContext(), binding.root, it.message!!, Constants.SNACK_LONG)
-                    Log.d("error_message_activity", it.message)
+                    AlertDialog.showAlertDialog(requireContext(), it.message!!, "Close")
                 }
             }
         }
