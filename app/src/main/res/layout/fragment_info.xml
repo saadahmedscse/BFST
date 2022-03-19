@@ -472,7 +472,7 @@
                     android:visibility="gone"
                     android:layout_width="@dimen/size_30"
                     android:layout_height="@dimen/size_30"
-                    android:indeterminateTint="@color/colorWhite"
+                    android:indeterminateTint="@color/colorDarkGrey"
                     android:layout_centerInParent="true"/>
 
             </RelativeLayout>
