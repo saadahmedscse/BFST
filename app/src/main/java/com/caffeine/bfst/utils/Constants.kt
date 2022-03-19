@@ -24,6 +24,7 @@ object Constants {
     val reference = FirebaseDatabase.getInstance().reference.child(app_name)
     val auth = FirebaseAuth.getInstance()
     val userReference = reference.child("Users")
+    val postReference = reference.child("Posts")
 
     const val SNACK_LONG = Snackbar.LENGTH_LONG
     const val SNACK_SHORT = Snackbar.LENGTH_SHORT
