@@ -106,4 +106,9 @@
         <item>2022</item>
     </string-array>
 
+    <string-array name="current_year">
+        <item>Year</item>
+        <item>2022</item>
+    </string-array>
+
 </resources>
