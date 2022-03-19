@@ -139,11 +139,11 @@ class DonerFragment : Fragment() {
     private fun changeItemBackground(list : ArrayList<TextView>){
         for (i in 0 until list.size){
             if (i==listItemCount){
-                list[i].setBackgroundResource(R.drawable.bg_light_red_10)
+                list[i].setBackgroundResource(R.drawable.bg_light_red_5)
                 list[i].setTextColor(resources.getColor(R.color.colorWhite))
             }
             else{
-                list[i].setBackgroundResource(R.drawable.storke_grey_10)
+                list[i].setBackgroundResource(R.drawable.storke_grey_5)
                 list[i].setTextColor(resources.getColor(R.color.colorGrey))
             }
         }
