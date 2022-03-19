@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/size_5"
+    android:layout_marginTop="@dimen/size_10"
+    android:layout_marginStart="@dimen/size_10"
+    android:layout_marginEnd="@dimen/size_10"
+    android:background="@drawable/bg_white_10"
+    android:elevation="3dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:background="@drawable/bg_blood"
+        android:padding="@dimen/size_5"
+        android:text="A+"
+        android:textSize="@dimen/small_text"
+        android:textColor="@color/colorLightRed"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/size_10">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/normal_text"
+            android:text="Saad Ahmed"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_5">
+
+            <TextView
+                android:id="@+id/ld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/regular"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/smaller_text"
+                android:text="Last donation"/>
+
+            <TextView
+                android:id="@+id/last_donation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ld"
+                android:fontFamily="@font/bold"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="@dimen/smaller_text"
+                android:text="12 months ago"/>
+
+            <TextView
+                android:id="@+id/loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/last_donation"
+                android:layout_marginStart="@dimen/size_15"
+                android:fontFamily="@font/regular"
+                android:textColor="@color/colorGrey"
+                android:textSize="@dimen/smaller_text"
+                android:text="Location"/>
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loc"
+                android:layout_marginStart="@dimen/size_15"
+                android:layout_toEndOf="@id/last_donation"
+                android:fontFamily="@font/bold"
+                android:text="Agargaon, Dhaka"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="@dimen/smaller_text" />
+
+            <LinearLayout
+                android:id="@+id/request_for_blood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/last_donation"
+                android:layout_marginTop="@dimen/size_5"
+                android:background="@drawable/bg_light_red_5"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/size_10"
+                android:paddingTop="4dp"
+                android:paddingEnd="@dimen/size_10"
+                android:paddingBottom="4dp">
+
+                <ImageView
+                    android:layout_width="@dimen/size_15"
+                    android:layout_height="@dimen/size_15"
+                    android:src="@drawable/ic_donor"
+                    app:tint="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_5"
+                    android:fontFamily="@font/bold"
+                    android:text="Request For Blood"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/smaller_text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/last_donation"
+                android:layout_toEndOf="@id/request_for_blood"
+                android:layout_marginStart="@dimen/size_10"
+                android:layout_marginTop="@dimen/size_5"
+                android:background="@drawable/bg_light_red_5"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/size_10"
+                android:paddingTop="4dp"
+                android:paddingEnd="@dimen/size_10"
+                android:paddingBottom="4dp">
+
+                <ImageView
+                    android:layout_width="@dimen/size_15"
+                    android:layout_height="@dimen/size_15"
+                    android:src="@drawable/call"
+                    app:tint="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_5"
+                    android:fontFamily="@font/bold"
+                    android:text="Call"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/smaller_text" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

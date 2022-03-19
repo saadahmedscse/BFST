@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorLightRed"
+    tools:context=".view.fragment.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_10"
+            android:textSize="@dimen/semi_medium_text"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:text="@string/app_name_bangla"
+            android:layout_gravity="center_horizontal"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_50"
+            android:background="@drawable/bg_light_grey_10"
+            android:layout_marginTop="@dimen/size_15"
+            android:paddingStart="@dimen/size_15"
+            android:fontFamily="@font/regular"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginEnd="@dimen/size_15"
+            android:paddingEnd="@dimen/size_5"
+            android:textSize="@dimen/small_text"
+            android:textColor="@color/colorBlack"
+            android:hint="Search for a donor"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_45"
+            android:layout_marginTop="@dimen/size_10"
+            android:background="@drawable/bg_green_10"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginEnd="@dimen/size_15"
+            android:gravity="center"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/small_text"
+            android:fontFamily="@font/bold"
+            android:text="Search"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/size_15"
+            android:background="@drawable/bg_header_10">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:id="@+id/no_data_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:layout_width="@dimen/size_100"
+                    android:layout_height="@dimen/size_100"
+                    android:src="@drawable/blood_bag"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorLightRed"
+                    android:textSize="@dimen/normal_text"
+                    android:text="No Request Available"
+                    android:fontFamily="@font/bold"
+                    android:layout_marginTop="@dimen/size_10"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
