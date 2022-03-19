@@ -4,6 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import com.caffeine.bfst.services.model.UserDetails
 import com.caffeine.bfst.utils.Constants
 import com.caffeine.bfst.utils.DataState
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
 class UserRepository : UserInterface {
 
@@ -21,6 +24,22 @@ class UserRepository : UserInterface {
     }
 
     override suspend fun getUserData(userMutableLiveData: MutableLiveData<DataState<ArrayList<UserDetails>>>) {
-        //Get user data from here
+        userMutableLiveData.postValue(DataState.Loading())
+        val list = ArrayList<UserDetails>()
+        Constants.userReference
+            .addValueEventListener(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    list.clear()
+                    for (ds in snapshot.children){
+                        ds.getValue(UserDetails::class.java)?.let { list.add(it) }
+                    }
+                    userMutableLiveData.postValue(DataState.Success(list))
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    userMutableLiveData.postValue(DataState.Failed(error.message))
+                }
+
+            })
     }
 }
