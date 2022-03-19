@@ -56,15 +56,45 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="@dimen/size_50"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/size_10">
+
+                <TextView
+                    android:layout_width="@dimen/size_80"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/et_left_bg"
+                    android:gravity="center"
+                    android:fontFamily="@font/regular"
+                    android:textColor="@color/colorLightGrey"
+                    android:textSize="@dimen/small_text"
+                    android:text="Location"/>
+
+                <EditText
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/et_right_bg"
+                    android:paddingStart="@dimen/size_15"
+                    android:fontFamily="@font/regular"
+                    android:textSize="@dimen/small_text"
+                    android:paddingEnd="@dimen/size_5"
+                    android:hint="Enter your location"
+                    android:inputType="text"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_10"
-                android:background="@drawable/bg_light_grey_10"
+                android:background="@drawable/bg_light_grey_5"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_50"
-                    android:background="@drawable/bg_light_red_10"
+                    android:background="@drawable/bg_light_red_5"
                     android:gravity="center"
                     android:fontFamily="@font/regular"
                     android:textColor="@color/colorLightGrey"
@@ -85,7 +115,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -99,7 +129,7 @@
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -113,7 +143,7 @@
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -126,7 +156,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -150,7 +180,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -164,7 +194,7 @@
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -178,7 +208,7 @@
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -191,7 +221,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -206,13 +236,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_50"
                 android:orientation="horizontal"
-                android:background="@drawable/bg_light_grey_10"
+                android:background="@drawable/bg_light_grey_5"
                 android:layout_marginTop="@dimen/size_10">
 
                 <TextView
                     android:layout_width="@dimen/size_80"
                     android:layout_height="match_parent"
-                    android:background="@drawable/bg_light_red_10"
+                    android:background="@drawable/bg_light_red_5"
                     android:gravity="center"
                     android:fontFamily="@font/regular"
                     android:textColor="@color/colorLightGrey"
@@ -233,7 +263,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -246,7 +276,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10"
+                        android:background="@drawable/storke_grey_5"
                         android:gravity="center"
                         android:fontFamily="@font/regular"
                         android:textColor="@color/colorGrey"
@@ -261,13 +291,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_10"
-                android:background="@drawable/bg_light_grey_10"
+                android:background="@drawable/bg_light_grey_5"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_50"
-                    android:background="@drawable/bg_light_red_10"
+                    android:background="@drawable/bg_light_red_5"
                     android:gravity="center"
                     android:fontFamily="@font/regular"
                     android:textColor="@color/colorLightGrey"
@@ -288,7 +318,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10">
+                        android:background="@drawable/storke_grey_5">
 
                         <Spinner
                             android:id="@+id/date"
@@ -304,7 +334,7 @@
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10">
+                        android:background="@drawable/storke_grey_5">
 
                         <Spinner
                             android:id="@+id/month"
@@ -319,7 +349,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10">
+                        android:background="@drawable/storke_grey_5">
 
                         <Spinner
                             android:id="@+id/year"
@@ -337,13 +367,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/size_10"
-                android:background="@drawable/bg_light_grey_10"
+                android:background="@drawable/bg_light_grey_5"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/size_50"
-                    android:background="@drawable/bg_light_red_10"
+                    android:background="@drawable/bg_light_red_5"
                     android:gravity="center"
                     android:fontFamily="@font/regular"
                     android:textColor="@color/colorLightGrey"
@@ -375,7 +405,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10">
+                        android:background="@drawable/storke_grey_5">
 
                         <Spinner
                             android:id="@+id/ld_date"
@@ -391,7 +421,7 @@
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
                         android:layout_marginEnd="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10">
+                        android:background="@drawable/storke_grey_5">
 
                         <Spinner
                             android:id="@+id/ld_month"
@@ -406,7 +436,7 @@
                         android:layout_height="@dimen/size_40"
                         android:layout_weight="1"
                         android:layout_marginStart="@dimen/size_5"
-                        android:background="@drawable/storke_grey_10">
+                        android:background="@drawable/storke_grey_5">
 
                         <Spinner
                             android:id="@+id/ld_year"
@@ -425,7 +455,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_50"
                 android:layout_marginTop="@dimen/size_50"
-                android:background="@drawable/bg_green_10">
+                android:background="@drawable/bg_green_5">
 
                 <TextView
                     android:id="@+id/btn_txt"

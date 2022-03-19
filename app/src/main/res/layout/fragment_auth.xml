@@ -129,7 +129,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_50"
             android:layout_marginTop="@dimen/size_50"
-            android:background="@drawable/bg_light_red_10">
+            android:background="@drawable/bg_light_red_5">
 
             <TextView
                 android:id="@+id/txt_login"
