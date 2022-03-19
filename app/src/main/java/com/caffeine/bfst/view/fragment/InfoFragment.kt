@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.CompoundButton
 import android.widget.TextView
 import androidx.activity.addCallback
 import androidx.fragment.app.viewModels
@@ -29,6 +28,7 @@ class InfoFragment : Fragment() {
 
     private lateinit var number : String
     private var name : String = ""
+    private var location : String = ""
     private var bloodGroup : String = ""
     private var gender : String = ""
     private var dob : String = ""
@@ -72,6 +72,7 @@ class InfoFragment : Fragment() {
             val user = UserDetails(
                 Constants.auth.uid!!,
                 name,
+                location,
                 number,
                 bloodGroup,
                 gender,
@@ -123,6 +124,7 @@ class InfoFragment : Fragment() {
     private fun initialize(){
         number = args.number
         name = binding.name.text.toString()
+        location = binding.location.text.toString()
         dob = binding.date.selectedItem.toString() + "-" + binding.month.selectedItem.toString() + "-" + binding.year.selectedItem.toString()
         if (ldd != "never"){
             ldd = binding.ldDate.selectedItem.toString() + "-" + binding.ldMonth.selectedItem.toString() + "-" + binding.ldYear.selectedItem.toString()
@@ -210,11 +212,11 @@ class InfoFragment : Fragment() {
     private fun changeItemBackground(list : ArrayList<TextView>){
         for (i in 0 until list.size){
             if (i==listItemCount){
-                list[i].setBackgroundResource(R.drawable.bg_light_red_10)
+                list[i].setBackgroundResource(R.drawable.bg_light_red_5)
                 list[i].setTextColor(resources.getColor(R.color.colorWhite))
             }
             else{
-                list[i].setBackgroundResource(R.drawable.storke_grey_10)
+                list[i].setBackgroundResource(R.drawable.storke_grey_5)
                 list[i].setTextColor(resources.getColor(R.color.colorGrey))
             }
         }
@@ -226,6 +228,10 @@ class InfoFragment : Fragment() {
         return when {
             name.isEmpty() -> {
                 Constants.showSnackBar(requireContext(), binding.root, "Please enter your name", Constants.SNACK_SHORT)
+                false
+            }
+            location.isEmpty() -> {
+                Constants.showSnackBar(requireContext(), binding.root, "Please enter your location", Constants.SNACK_SHORT)
                 false
             }
             bloodGroup.isEmpty() -> {
