@@ -425,7 +425,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/size_50"
                 android:layout_marginTop="@dimen/size_50"
-                android:background="@drawable/bg_light_red_10">
+                android:background="@drawable/bg_green_10">
 
                 <TextView
                     android:id="@+id/btn_txt"
@@ -433,7 +433,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:fontFamily="@font/bold"
-                    android:textColor="@color/colorWhite"
+                    android:textColor="@color/colorDarkGrey"
                     android:textSize="@dimen/normal_text"
                     android:text="Create Account"/>
 
