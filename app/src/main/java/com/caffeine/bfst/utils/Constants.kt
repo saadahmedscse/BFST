@@ -14,6 +14,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.caffeine.bfst.R
+import com.caffeine.bfst.services.model.BloodModel
 import com.caffeine.bfst.services.model.UserDetails
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
@@ -45,6 +46,18 @@ object Constants {
 
     fun getMutableDataStateOfUserDetails() : MutableLiveData<DataState<ArrayList<UserDetails>>>{
         return MutableLiveData<DataState<ArrayList<UserDetails>>>()
+    }
+
+    fun getMutableDataStateOfBloodMoel() : MutableLiveData<DataState<ArrayList<BloodModel>>>{
+        return MutableLiveData<DataState<ArrayList<BloodModel>>>()
+    }
+
+    fun getMutableDataStateOfBloodMoelObject() : MutableLiveData<DataState<BloodModel>>{
+        return MutableLiveData<DataState<BloodModel>>()
+    }
+
+    fun getMutableDataStateOfUserDetailsObject() : MutableLiveData<DataState<UserDetails>>{
+        return MutableLiveData<DataState<UserDetails>>()
     }
 
     fun intentToActivity(activity : Activity, c : Class<*>){
