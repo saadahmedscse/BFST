@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/size_10"
+    android:layout_marginStart="@dimen/size_10"
+    android:layout_marginEnd="@dimen/size_10"
+    android:padding="@dimen/size_10"
+    android:background="@drawable/bg_white_5"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bold"
+        android:background="@drawable/bg_blood"
+        android:padding="@dimen/size_5"
+        android:text="A+"
+        android:textSize="@dimen/small_text"
+        android:textColor="@color/colorLightRed"/>
+
+    <LinearLayout
+        android:id="@+id/ig_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@id/bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:text="Petient"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/smaller_text" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_10"
+            android:fontFamily="@font/bold"
+            android:text="Saad Ahmed"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/small_text" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ig_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ig_name"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_toEndOf="@id/bg"
+        android:fontFamily="@font/regular"
+        android:text="Date"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ig_date"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_toEndOf="@id/bg"
+        android:fontFamily="@font/bold"
+        android:text="22-Nov-2022"
+        android:textColor="@color/colorDarkGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/ig_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ig_name"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_toEndOf="@id/date"
+        android:fontFamily="@font/regular"
+        android:text="Time"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ig_time"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_toEndOf="@id/date"
+        android:fontFamily="@font/bold"
+        android:text="Evening"
+        android:textColor="@color/colorDarkGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/ig_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ig_name"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_toEndOf="@id/time"
+        android:fontFamily="@font/regular"
+        android:text="Quantity"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ig_time"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_toEndOf="@id/time"
+        android:fontFamily="@font/bold"
+        android:text="3 Bag"
+        android:textColor="@color/colorLightRed"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_toEndOf="@id/bg"
+        android:fontFamily="@font/bold"
+        android:text="Popular Hospital Dhaka Hello"
+        android:textColor="@color/colorDarkGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hospital"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_toEndOf="@id/bg"
+        android:fontFamily="@font/regular"
+        android:text="Dhaka, Bangladesh"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/location"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_toEndOf="@id/bg"
+        android:fontFamily="@font/regular"
+        android:text="Dhaka, Bangladesh"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/ig_posted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/desc"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_toEndOf="@id/bg"
+        android:fontFamily="@font/regular"
+        android:text="Posted by"
+        android:textColor="@color/colorGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <TextView
+        android:id="@+id/posted_by"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/desc"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_10"
+        android:layout_toEndOf="@id/ig_posted"
+        android:fontFamily="@font/bold"
+        android:text="Abu Syed Al Sakib"
+        android:textColor="@color/colorDarkGrey"
+        android:textSize="@dimen/smaller_text" />
+
+    <LinearLayout
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ig_posted"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_5"
+        android:layout_toEndOf="@id/bg"
+        android:background="@drawable/bg_light_red_5"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/size_10"
+        android:paddingTop="4dp"
+        android:paddingEnd="@dimen/size_10"
+        android:paddingBottom="4dp">
+
+        <ImageView
+            android:layout_width="@dimen/size_15"
+            android:layout_height="@dimen/size_15"
+            android:src="@drawable/call"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_5"
+            android:fontFamily="@font/bold"
+            android:text="Call"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/smaller_text" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ig_posted"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginTop="@dimen/size_5"
+        android:layout_toEndOf="@id/call"
+        android:background="@drawable/bg_light_red_5"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/size_10"
+        android:paddingTop="4dp"
+        android:paddingEnd="@dimen/size_10"
+        android:paddingBottom="4dp">
+
+        <ImageView
+            android:layout_width="@dimen/size_15"
+            android:layout_height="@dimen/size_15"
+            android:src="@drawable/message"
+            app:tint="@color/colorWhite" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_5"
+            android:fontFamily="@font/bold"
+            android:text="Message"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/smaller_text" />
+
+    </LinearLayout>
+
+</RelativeLayout>
