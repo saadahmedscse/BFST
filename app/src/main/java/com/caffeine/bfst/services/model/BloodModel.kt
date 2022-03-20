@@ -1,8 +1,11 @@
 package com.caffeine.bfst.services.model
 
 data class BloodModel(
+    val id : String = "",
     val uid: String = "",
     val name: String = "",
+    val poster : String = "",
+    val number: String = "",
     val bg: String = "",
     val quantity: String = "",
     val date: String = "",
