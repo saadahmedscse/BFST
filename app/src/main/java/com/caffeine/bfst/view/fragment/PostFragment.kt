@@ -17,6 +17,7 @@ import com.caffeine.bfst.utils.Constants
 import com.caffeine.bfst.utils.DataState
 import com.caffeine.bfst.utils.SuccessDialog
 import com.caffeine.bfst.viewmodel.PostViewModel
+import com.caffeine.bfst.viewmodel.UserViewModel
 import java.lang.Exception
 import java.text.SimpleDateFormat
 
@@ -24,6 +25,7 @@ class PostFragment : Fragment() {
 
     private lateinit var binding : FragmentPostBinding
     private val viewModel : PostViewModel by viewModels()
+    private val userViewModel : UserViewModel by viewModels()
 
     private var name : String = ""
     private var quantity : String = ""
@@ -34,6 +36,8 @@ class PostFragment : Fragment() {
     private var desc : String = ""
     private var currentTime : String = ""
     private var bloodGroup : String = ""
+    private var poster : String = ""
+    private var number : String = ""
 
     private lateinit var format : SimpleDateFormat
 
@@ -49,6 +53,19 @@ class PostFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentPostBinding.inflate(inflater)
+        userViewModel.getMyInfo()
+        userViewModel.myLiveData.observe(viewLifecycleOwner){
+            when (it){
+                is DataState.Loading -> {}
+
+                is DataState.Success -> {
+                    poster = it.data!!.name
+                    number = it.data.number
+                }
+
+                is DataState.Failed -> {}
+            }
+        }
 
         binding.plus.setOnClickListener{
             if (bag < 10){
@@ -75,8 +92,11 @@ class PostFragment : Fragment() {
             if (validate()){
                 if (Constants.internetAvailable(requireContext())){
                     val blood = BloodModel(
+                        currentTime,
                         Constants.auth.uid!!,
                         name,
+                        poster,
+                        number,
                         bloodGroup,
                         quantity,
                         date,
@@ -164,6 +184,11 @@ class PostFragment : Fragment() {
 
         else if (desc.isEmpty()){
             Constants.showSnackBar(requireContext(), binding.root, "Please write a short description about petient", Constants.SNACK_SHORT)
+            return false
+        }
+
+        else if (poster.isEmpty() || number.isEmpty()){
+            AlertDialog.showAlertDialog(requireContext(), "Something went wrong, please try again later", "Close")
             return false
         }
 

@@ -4,6 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import com.caffeine.bfst.services.model.BloodModel
 import com.caffeine.bfst.utils.Constants
 import com.caffeine.bfst.utils.DataState
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
 class PostRepository : PostInterface {
     override fun postARequest(
@@ -23,6 +26,22 @@ class PostRepository : PostInterface {
     }
 
     override suspend fun getPosts(bloodMutableLiveData: MutableLiveData<DataState<ArrayList<BloodModel>>>) {
-        TODO("Not yet implemented")
+        bloodMutableLiveData.postValue(DataState.Loading())
+        val list = ArrayList<BloodModel>()
+        Constants.postReference.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                list.clear()
+                for (ds in snapshot.children){
+                    for (data in ds.children){
+                        data.getValue(BloodModel::class.java)?.let { list.add(it) }
+                    }
+                }
+                bloodMutableLiveData.postValue(DataState.Success(list))
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                bloodMutableLiveData.postValue(DataState.Failed(error.message))
+            }
+        })
     }
 }
