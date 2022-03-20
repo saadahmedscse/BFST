@@ -42,4 +42,20 @@ class UserRepository : UserInterface {
 
             })
     }
+
+    override suspend fun getMyInfo(userMutableLiveData: MutableLiveData<DataState<UserDetails>>) {
+        userMutableLiveData.postValue(DataState.Loading())
+        Constants.userReference.child(Constants.auth.uid!!)
+            .addValueEventListener(object : ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val user = snapshot.getValue(UserDetails::class.java)
+                    userMutableLiveData.postValue(DataState.Success(user))
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    userMutableLiveData.postValue(DataState.Failed(error.message))
+                }
+
+            })
+    }
 }

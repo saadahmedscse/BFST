@@ -22,6 +22,10 @@ class UserViewModel : ViewModel(){
     val donorLiveData : LiveData<DataState<ArrayList<UserDetails>>>
         get() = donorMutableLiveData
 
+    private val myMutableLiveData = Constants.getMutableDataStateOfUserDetailsObject()
+    val myLiveData : LiveData<DataState<UserDetails>>
+        get() = myMutableLiveData
+
     fun updateData(user : UserDetails){
         repository.updateData(user, userMutableLiveData)
     }
@@ -29,6 +33,12 @@ class UserViewModel : ViewModel(){
     fun getDonors(){
         viewModelScope.launch(Dispatchers.IO) {
             repository.getUserData(donorMutableLiveData)
+        }
+    }
+
+    fun getMyInfo(){
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.getMyInfo(myMutableLiveData)
         }
     }
 }
