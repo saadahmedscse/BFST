@@ -55,7 +55,17 @@ class DonorAdapter(val list: ArrayList<UserDetails>, val context: Context) : Rec
                 val LAST = sdf.parse(user.ldd)
                 days = ((TODAY.time - LAST.time) / (1000 * 60 * 60 * 24))
 
-                holder.ldd.text = "$days days ago"
+                val d = days.toInt()
+
+                if (d == 0){
+                    holder.ldd.text = "Today"
+                }
+                else if (d == 1){
+                    holder.ldd.text = "Yesterday"
+                }
+                else {
+                    holder.ldd.text = "$days days ago"
+                }
 
                 if (days < 120){
                     holder.request.setBackgroundResource(R.drawable.disabled_red_button)
