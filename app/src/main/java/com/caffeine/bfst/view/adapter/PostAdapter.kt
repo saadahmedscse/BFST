@@ -6,12 +6,14 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.caffeine.bfst.databinding.ItemLayoutPostBinding
 import com.caffeine.bfst.services.model.BloodModel
 import com.caffeine.bfst.utils.Constants
 import com.caffeine.bfst.view.activity.AuthenticationActivity
+import com.caffeine.bfst.viewmodel.PostViewModel
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
@@ -30,6 +32,7 @@ class PostAdapter(val list : ArrayList<BloodModel>, val context : Context) : Rec
         val poster = binding.postedBy
         val call = binding.call
         val message = binding.message
+        val delete = binding.delete
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -78,6 +81,14 @@ class PostAdapter(val list : ArrayList<BloodModel>, val context : Context) : Rec
 
         val ref = Constants.postReference.child(blood.uid).child(blood.id)
         if (days > 2){
+            ref.removeValue()
+        }
+
+        if (blood.uid == Constants.auth.uid){
+            holder.delete.visibility = View.VISIBLE
+        }
+
+        holder.delete.setOnClickListener{
             ref.removeValue()
         }
     }
