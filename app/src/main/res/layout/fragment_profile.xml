@@ -1,14 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.fragment.ProfileFragment">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="profile"
-        android:textSize="60sp"/>
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/bg"
+            android:layout_width="@dimen/size_80"
+            android:layout_height="@dimen/size_80"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginTop="@dimen/size_10"
+            android:layout_marginBottom="@dimen/size_10"
+            android:background="@drawable/bg_white_5"
+            android:elevation="3dp"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:textColor="@color/colorLightRed"
+            android:textSize="@dimen/medium_text" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginTop="@dimen/size_10"
+            android:layout_toEndOf="@id/bg"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/small_text" />
+
+        <TextView
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginTop="@dimen/size_5"
+            android:layout_toEndOf="@id/bg"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/smaller_text" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/number"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginTop="@dimen/size_10"
+            android:layout_toEndOf="@id/bg"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/smaller_text" />
+
+        <TextView
+            android:id="@+id/txt_ldd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/regular"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/smaller_text"
+            android:text="Last donation date"
+            android:layout_below="@id/bg"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginTop="@dimen/size_5"/>
+
+        <TextView
+            android:id="@+id/txt_can_donate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ld_date"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginTop="@dimen/size_10"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/colorGrey"
+            android:textSize="@dimen/smaller_text" />
+
+        <TextView
+            android:id="@+id/donate_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_45"
+            android:layout_below="@id/txt_can_donate"
+            android:layout_marginStart="@dimen/size_15"
+            android:layout_marginTop="@dimen/size_5"
+            android:layout_marginEnd="@dimen/size_15"
+            android:background="@drawable/bg_disabled_red_5"
+            android:fontFamily="@font/bold"
+            android:gravity="center"
+            android:text="DONATE TODAY"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/small_text" />
+
+        <TextView
+            android:id="@+id/ld_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_ldd"
+            android:layout_marginStart="@dimen/size_15"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/smaller_text" />
+
+        <ImageView
+            android:id="@+id/info_btn"
+            android:layout_width="@dimen/size_20"
+            android:layout_height="@dimen/size_20"
+            android:layout_below="@id/bg"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/size_5"
+            android:layout_marginEnd="@dimen/size_15"
+            android:src="@drawable/info"
+            app:tint="@color/colorLightRed" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/logout_btn"
+            android:layout_width="@dimen/size_120"
+            android:layout_height="@dimen/size_50"
+            android:background="@drawable/bg_white_5"
+            android:layout_marginEnd="@dimen/size_15"
+            android:layout_marginBottom="@dimen/size_15"
+            android:elevation="3dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/bold"
+            android:textColor="@color/colorDarkGrey"
+            android:textSize="@dimen/small_text"
+            android:text="Logout"
+            android:gravity="center"/>
+
+    </RelativeLayout>
 
 </FrameLayout>
