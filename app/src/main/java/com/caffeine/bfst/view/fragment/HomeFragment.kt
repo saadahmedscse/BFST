@@ -32,11 +32,25 @@ class HomeFragment : Fragment() {
                 is DataState.Loading -> {}
 
                 is DataState.Success -> {
+                    binding.progressBar.visibility = View.GONE
                     val adapter = PostAdapter(it.data!!, requireContext())
-                    binding.recyclerView.adapter = adapter
+
+                    if (adapter.itemCount > 0){
+                        binding.recyclerView.visibility = View.VISIBLE
+                        binding.noDataLayout.visibility = View.GONE
+                        binding.recyclerView.adapter = adapter
+                    }
+                    else {
+                        binding.recyclerView.visibility = View.GONE
+                        binding.noDataLayout.visibility = View.VISIBLE
+                    }
                 }
 
-                is DataState.Failed -> {}
+                is DataState.Failed -> {
+                    binding.progressBar.visibility = View.GONE
+                    binding.noDataLayout.visibility = View.VISIBLE
+                    binding.recyclerView.visibility = View.GONE
+                }
             }
         }
 
