@@ -216,7 +216,7 @@ class InfoFragment : Fragment() {
                 list[i].setTextColor(resources.getColor(R.color.colorWhite))
             }
             else{
-                list[i].setBackgroundResource(R.drawable.storke_grey_5)
+                list[i].setBackgroundResource(R.drawable.bg_light_grey_5)
                 list[i].setTextColor(resources.getColor(R.color.colorGrey))
             }
         }
