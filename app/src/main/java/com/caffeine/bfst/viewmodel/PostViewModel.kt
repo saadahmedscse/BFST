@@ -22,10 +22,6 @@ class PostViewModel : ViewModel() {
     val postLiveData : LiveData<DataState<ArrayList<BloodModel>>>
         get() = postMutableLiveData
 
-    private val myPostMutableLiveData = Constants.getMutableDataStateOfBloodMoel()
-    val myPostLiveData : LiveData<DataState<ArrayList<BloodModel>>>
-        get() = myPostMutableLiveData
-
     fun postABloodRequest(bloodModel: BloodModel){
         repository.postARequest(bloodModel, bloodMutableLiveData)
     }
@@ -33,12 +29,6 @@ class PostViewModel : ViewModel() {
     fun getBloodPosts(){
         viewModelScope.launch(Dispatchers.IO) {
             repository.getPosts(postMutableLiveData)
-        }
-    }
-
-    fun getMyPosts(){
-        viewModelScope.launch {
-            repository.getMyPosts(myPostMutableLiveData)
         }
     }
 
