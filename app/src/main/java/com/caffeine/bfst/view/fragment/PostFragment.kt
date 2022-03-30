@@ -107,30 +107,30 @@ class PostFragment : Fragment() {
                         currentTime
                     )
                     viewModel.postABloodRequest(blood)
+
+                    viewModel.bloodLiveData.observe(viewLifecycleOwner){
+                        when (it) {
+                            is DataState.Loading -> {
+                                binding.btnTxt.visibility = View.GONE
+                                binding.progressBar.visibility = View.VISIBLE
+                            }
+
+                            is DataState.Success -> {
+                                SuccessDialog.showAlertDialog(requireContext(), it.data!!, "Close")
+                                binding.progressBar.visibility = View.GONE
+                                binding.btnTxt.visibility = View.VISIBLE
+                            }
+
+                            is DataState.Failed -> {
+                                Constants.showSnackBar(requireContext(), binding.root, it.message!!, Constants.SNACK_LONG)
+                                binding.progressBar.visibility = View.GONE
+                                binding.btnTxt.visibility = View.VISIBLE}
+                        }
+                    }
                 }
                 else {
                     Constants.showSnackBar(requireContext(), binding.root, "No internet connection", Constants.SNACK_SHORT)
                 }
-            }
-        }
-
-        viewModel.bloodLiveData.observe(viewLifecycleOwner){
-            when (it) {
-                is DataState.Loading -> {
-                    binding.btnTxt.visibility = View.GONE
-                    binding.progressBar.visibility = View.VISIBLE
-                }
-
-                is DataState.Success -> {
-                    SuccessDialog.showAlertDialog(requireContext(), it.data!!, "Close")
-                    binding.progressBar.visibility = View.GONE
-                    binding.btnTxt.visibility = View.VISIBLE
-                }
-
-                is DataState.Failed -> {
-                    Constants.showSnackBar(requireContext(), binding.root, it.message!!, Constants.SNACK_LONG)
-                    binding.progressBar.visibility = View.GONE
-                    binding.btnTxt.visibility = View.VISIBLE}
             }
         }
 
@@ -319,7 +319,7 @@ class PostFragment : Fragment() {
                 list[i].setTextColor(resources.getColor(R.color.colorWhite))
             }
             else{
-                list[i].setBackgroundResource(R.drawable.storke_grey_5)
+                list[i].setBackgroundResource(R.drawable.bg_white_5)
                 list[i].setTextColor(resources.getColor(R.color.colorGrey))
             }
         }
