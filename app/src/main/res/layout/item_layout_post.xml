@@ -52,6 +52,17 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/delete"
+        android:layout_width="@dimen/size_25"
+        android:layout_height="@dimen/size_25"
+        android:visibility="gone"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/bg_light_red_5"
+        android:padding="@dimen/size_5"
+        android:src="@drawable/bin"
+        app:tint="@color/colorWhite" />
+
     <TextView
         android:id="@+id/ig_date"
         android:layout_width="wrap_content"
