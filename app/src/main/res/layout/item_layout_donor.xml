@@ -48,9 +48,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/regular"
+                android:text="Last donation"
                 android:textColor="@color/colorGrey"
-                android:textSize="@dimen/smaller_text"
-                android:text="Last donation"/>
+                android:textSize="@dimen/smaller_text" />
 
             <TextView
                 android:id="@+id/last_donation"
@@ -58,20 +58,20 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/ld"
                 android:fontFamily="@font/bold"
+                android:text="Never Donated"
                 android:textColor="@color/colorDarkGrey"
-                android:textSize="@dimen/smaller_text"
-                android:text="12 months ago"/>
+                android:textSize="@dimen/smaller_text" />
 
             <TextView
                 android:id="@+id/loc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/last_donation"
                 android:layout_marginStart="@dimen/size_15"
+                android:layout_toEndOf="@id/ld"
                 android:fontFamily="@font/regular"
+                android:text="Location"
                 android:textColor="@color/colorGrey"
-                android:textSize="@dimen/smaller_text"
-                android:text="Location"/>
+                android:textSize="@dimen/smaller_text" />
 
             <TextView
                 android:id="@+id/location"
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/loc"
                 android:layout_marginStart="@dimen/size_15"
-                android:layout_toEndOf="@id/last_donation"
+                android:layout_toEndOf="@id/ld"
                 android:fontFamily="@font/bold"
                 android:text="Agargaon, Dhaka"
                 android:textColor="@color/colorDarkGrey"
